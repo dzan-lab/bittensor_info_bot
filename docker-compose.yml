@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  bit_bot:
+    image: dzan/bittensor_info_bot_image
+    platform: linux/amd64
+    build:
+      context: .
+    container_name: bittensor_info_bot
+    restart: unless-stopped
+#     command:
+#       --netuid=$NETUID
+#       --subtensor.network $NETWORK
+#       --wallet.name=$WALLET_NAME
+#       --wallet.hotkey=$WALLET_HOTKEY
+#       --axon.port=$AXON_PORT
+#       --logging.debug
+# #      --blacklist.force_validator_permit
+    volumes:
+      - .:/app
